@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .highscore {
+    
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 400px;
+    height: 250px;
+  }
