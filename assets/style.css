@@ -47,3 +47,25 @@ header {
     font-size: large;
     font-size: larger;
   }
+
+  div .answer-section {
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  div .selected {
+    display: block;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }

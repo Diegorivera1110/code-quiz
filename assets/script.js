@@ -44,7 +44,7 @@ var questionsList = [
 ];
 
 var questions = questionsList.length;
-var timeRemaining = questions * 15;
+var timeRemaining = 90;
 
 
 // handles the action after starting quiz
@@ -68,6 +68,7 @@ var taskHandler = function(event) {
 
 // starts quiz
 var quizStart = function() {
+  console.log("quiz start occurs");
 
   var time = setInterval(function() {
     timerEl.textContent = "Time: " + timeRemaining;
@@ -84,7 +85,6 @@ var quizStart = function() {
   mainContent.appendChild(questionArea);
 
   beginQuestion();
-  
 }
 // END quizSart
 
@@ -99,27 +99,11 @@ var nextContent = function(content) {
 // question load up 
 var beginQuestion = function() {
   if (questionsList.length  > 0) {
-    var answerOptions = randomQuestion();
+    var answerOptions = questionAnswer();
     createAnswers(answerOptions.correct, answerOptions.answers);
     var questionEl = document.querySelector(".question-line");
     document.getElementById(questionEl).textContent = answerOptions.question;
   }
-}
-
-var randomQuestion = function () {
-  var randomNumber = Math.floor(Math.random() * questionsList.length);
-  var questionAnswer = questionsList[randomNumber];
-  questionsList.splice(randomNumber, 1);
-  var randomAnswers = [];
-
-  for (var i = 0; i < 4; i++) {
-      var random = Math.floor(Math.random() * (4-i));
-      randomAnswers[i] = questionAnswer.answers[random];
-      questionAnswer.answers.splice(random, 1);
-  }
-  questionAnswer.answers = randomAnswers;
-
-  return questionAnswer;
 }
 
 
